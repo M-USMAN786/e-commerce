@@ -1,36 +1,19 @@
-body,html
-{
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
-html, body {
-  margin: 0; 
-  padding: 0;       
-  height: 100%;     
-  width: 100%;     
-}
-
-html {
-  box-sizing: border-box;   
-  font-size: 16px;          
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;  
-}
-
-*
-{
+/* resset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.header
-{
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
     margin-top: 5px;
     background-color:black;
-    width: calc( 100% - 10px);
+    width: calc(100% - 10px);
     height: 50px;
     box-shadow: inset 0px 0px 5px black;
     margin-left: 5px;
@@ -39,43 +22,42 @@ html {
     align-items: center;
     border-radius: 5px;
 }
-.nav
-{
+
+.nav {
     display: flex;
     align-items: center;
-    width: 100vw;
+    width: 100%;   
     height: 100vh;
     background-color: black;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    position: fixed;   
+    left: 0;
+    top: 0;
     flex-direction: column;
     justify-content: center;
     row-gap: 20px;
-    transition-duration: 0.5s;
-    margin-left: 100%;
     opacity: 0;
-    display: none;
-    
+    transform: translateX(100%);  
+    pointer-events: none;         
+
+    transition: all 0.5s ease-in-out;
 }
-.nav_toggle
-{
-    animation-name: nav_toggle;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    margin-left: 0%;
+
+
+.nav_toggle {
     opacity: 1;
+    transform: translateX(0);   
+    pointer-events: auto;       
 }
 @keyframes nav_toggle {
-    5%{
-        display: flex;
+    0%{
+
     }
     100%
     {
-        margin-left: 0%;
         opacity: 1;
+        margin-left: 0%;
     }
+    
 }
 .header > nav > a 
 {
@@ -162,7 +144,6 @@ html {
 .auth
 {
     width: 150px;
-    /* background-color: red; */
     height: 100%;
     z-index: 6;
     float: right;
@@ -178,7 +159,6 @@ html {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
-    /* background-color: red; */
     padding: 5px 10px;
     border-radius: 2px;
     width: 70px;
@@ -193,7 +173,6 @@ html {
 .auth > hr
 {
     height: 50%;
-    width: 2px;
 }
 @media (max-width:850px) {
 
