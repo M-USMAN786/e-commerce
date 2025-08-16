@@ -1,0 +1,38 @@
+.sign_in_form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    margin-top: 10px;
+}
+.form_text_items
+{
+    /* text-align: center; */
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+    font-size: 20px;
+}
+.form_text_items:focus
+{
+    border: double 2px black;
+}
+.profile_pic
+{
+    background-color: skyblue;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+}
+.profile_pic::before
+{
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: gray;
+    position: absolute;
+    border-radius: 150px;
+}

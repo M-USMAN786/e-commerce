@@ -56,12 +56,26 @@ html {
     transition-duration: 0.5s;
     margin-left: 100%;
     opacity: 0;
+    display: none;
     
 }
 .nav_toggle
 {
+    animation-name: nav_toggle;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
     margin-left: 0%;
     opacity: 1;
+}
+@keyframes nav_toggle {
+    5%{
+        display: flex;
+    }
+    100%
+    {
+        margin-left: 0%;
+        opacity: 1;
+    }
 }
 .header > nav > a 
 {
