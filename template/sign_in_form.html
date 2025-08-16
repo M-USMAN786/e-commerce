@@ -3,15 +3,36 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'sign_in_form.css' %}?v={{ now|date:'U' }}">
 {% endblock head %}
+
 {% block body %}
-<form action="login" method="post" class="sign_in_form">
-    <input type="file" class="profile_pic" placeholder="Profile Pic" name="profile_pic" id="profile_pic">
-    <input type="text" class="first_name form_text_items" placeholder="First name" name="first_name" id="first_name">
-    <input type="text" class="last_name form_text_items" placeholder="Last Name" name="last_name" id="last_name">
-    <input type="text" placeholder="User Name" class="user_name form_text_items" name="user_name" id="user_name">
-    <input type="email" placeholder="Email" class="email form_text_items" name="email" id="email">
-    <input type="password" class="password form_text_items" placeholder="password" name="password" id="password">
-    <input type="text" class="confirm_password form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
-    <button type="submit">Login</button>
+<form action="signup" method="post" enctype="multipart/form-data" class="sign_in_form">
+    {% csrf_token %}
+
+    <!-- Profile Picture Upload -->
+    <label for="profile_pic" class="profile_pic_wrapper">
+        <img src="{% static 'profile_pic.webp' %}" alt="Profile Picture" id="profile_pic_preview">
+    </label>
+    <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
+
+    <!-- Text Inputs -->
+    <input type="text" class="form_text_items" placeholder="First Name" name="first_name" id="first_name" required>
+    <input type="text" class="form_text_items" placeholder="Last Name" name="last_name" id="last_name" required>
+    <input type="text" class="form_text_items" placeholder="Username" name="user_name" id="user_name" required>
+    <input type="email" class="form_text_items" placeholder="Email" name="email" id="email" required>
+    <input type="password" class="form_text_items" placeholder="Password" name="password" id="password" required>
+    <input type="password" class="form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
+
+    <!-- Button -->
+    <button type="submit">Sign Up</button>
 </form>
+
+<script>
+    // Preview uploaded profile pic
+    document.getElementById("profile_pic").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            document.getElementById("profile_pic_preview").src = URL.createObjectURL(file);
+        }
+    });
+</script>
 {% endblock body %}
