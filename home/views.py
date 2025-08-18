@@ -6,3 +6,6 @@ def home(request):
 
 def sign_in_form(request):
     return render(request,'sign_in_form.html')
+
+def login_form(request):
+    return render(request,'login_form.html')

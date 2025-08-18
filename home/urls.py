@@ -20,5 +20,6 @@ from home import views
 
 urlpatterns = [
     path("",views.home,name='home'),
-    path("sign_in_form",views.sign_in_form,name='sign_in')
+    path("sign_in_form",views.sign_in_form,name='sign_in_form'),
+    path("login_form",views.login_form,name='login_form')
 ]

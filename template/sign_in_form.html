@@ -7,7 +7,7 @@
 {% block body %}
 <form action="signup" method="post" enctype="multipart/form-data" class="sign_in_form">
     {% csrf_token %}
-
+    <h1 class="sign_in_text">Sign Up</h1>
     <!-- Profile Picture Upload -->
     <label for="profile_pic" class="profile_pic_wrapper">
         <img src="{% static 'profile_pic.webp' %}" alt="Profile Picture" id="profile_pic_preview">
@@ -15,12 +15,13 @@
     <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
 
     <!-- Text Inputs -->
-    <input type="text" class="form_text_items" placeholder="First Name" name="first_name" id="first_name" required>
-    <input type="text" class="form_text_items" placeholder="Last Name" name="last_name" id="last_name" required>
-    <input type="text" class="form_text_items" placeholder="Username" name="user_name" id="user_name" required>
-    <input type="email" class="form_text_items" placeholder="Email" name="email" id="email" required>
-    <input type="password" class="form_text_items" placeholder="Password" name="password" id="password" required>
-    <input type="password" class="form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
+    <input type="text" requered class="form_text_items" placeholder="First Name" name="first_name" id="first_name" required>
+    <input type="text" requered class="form_text_items" placeholder="Last Name" name="last_name" id="last_name" required>
+    <input type="text" requered class="form_text_items" placeholder="Username" name="user_name" id="user_name" required>
+    <input type="email" requered class="form_text_items" placeholder="Email" name="email" id="email" required>
+    <input type="password" requered class="form_text_items" placeholder="Password" name="password" id="password" required>
+    <input type="password" requered class="form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
+    <p>If you already have an account go to Login</p>
 
     <!-- Button -->
     <button type="submit">Sign Up</button>
