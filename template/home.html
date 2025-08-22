@@ -1,1 +1,14 @@
 {% extends "base.html" %}
+{% block body %}
+<div class="products_details_template">
+    {% for product in products %}
+    <div class="product_card">
+        <img src="media/{{product.product_image}}" alt="" width="150px" height="150px">
+        <p>{{product.product_name}}</p>
+        <p>{{product.product_price}}</p>
+        <p>{{product.product_seller_id}}</p>
+        <button></button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}

@@ -23,7 +23,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("",views.home,name='home'),
     path("sign_in_form",views.sign_in_form,name='sign_in_form'),
-    path("login_form",views.login_form,name='login_form')
+    path("login_form",views.login_form,name='login_form'),
+    path("login",views.login,name='login'),
+    path("sign_in",views.sign_in,name='sign_in'),
+    path("logout",views.logout,name='logout'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
