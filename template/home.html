@@ -1,13 +1,19 @@
 {% extends "base.html" %}
+{% block head %}
+  {% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}?v={{ now|date:'U' }}">
+{% endblock head %}
 {% block body %}
 <div class="products_details_template">
     {% for product in products %}
     <div class="product_card">
         <img src="media/{{product.product_image}}" alt="" width="150px" height="150px">
-        <p>{{product.product_name}}</p>
-        <p>{{product.product_price}}</p>
-        <p>{{product.product_seller_id}}</p>
-        <button></button>
+        <hr>
+        <p>{{product.product_name}}</p><hr>
+        <p>Price:{{product.product_price}}</p><hr>
+        <p>Seller:{{product.product_seller_id}}</p><hr>
+        <p>Stock:{{product.product_stock}}</p><hr>
+        <button>Details</button><hr>
     </div>
     {% endfor %}
 </div>
