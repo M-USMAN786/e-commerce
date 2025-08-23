@@ -1,13 +1,20 @@
-*
-{
+/* resset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
-.header
-{
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
     margin-top: 5px;
     background-color:black;
-    width: calc( 100% - 10px);
+    width: calc(100% - 10px);
     height: 50px;
     box-shadow: inset 0px 0px 5px black;
     margin-left: 5px;
@@ -15,40 +22,162 @@
     flex-direction: row;
     align-items: center;
     border-radius: 5px;
-    /* position: fixed; */
 }
-.header > nav > a
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;   
+    height: 100vh;
+    background-color: black;
+    position: fixed;   
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    opacity: 0;
+    transform: translateX(100%);  
+    pointer-events: none;         
+
+    transition: all 0.5s ease-in-out;
+}
+
+
+.nav_toggle {
+    opacity: 1;
+    transform: translateX(0);   
+    pointer-events: auto;       
+}
+@keyframes nav_toggle {
+    0%{
+
+    }
+    100%
+    {
+        opacity: 1;
+        margin-left: 0%;
+    }
+    
+}
+.header > nav > a 
 {
     text-decoration: none;
     padding: 5px 10px;
-    background-position: 0% 0%;
-    transition-duration: 0.2s;
-    border-radius: 5px;
-    margin-left: 10px;
-    width: 80px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
     color: white;
+    position: relative;
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+    width: 100%;
 }
-.header > nav > a:hover
+
+.header > nav > a::before 
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.header > nav > a:hover {
+    color: black;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.header > nav > a:hover::before {
+    width: 100%;
+}
+.hambergur_menu
+{
+    width: 50px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    z-index: 4;
+
+}
+.hambergur_menu > div
+{
+    background-color: white;
+    width: 40px;
+    height: 3px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.hambergur_menu_button_toggle_line1
+{
+   rotate:45deg;
+   position: relative;
+   top: 33%;
+}
+.hambergur_menu_button_toggle_line2
+{
+   position: relative;
+   margin-left: 100px;
+   opacity: 0;
+}
+.hambergur_menu_button_toggle_line3
+{
+    rotate: -45deg;
+    position: relative;
+    top: -33%;
+    
+}
+.auth
+{
+    width: 150px;
+    height: 100%;
+    z-index: 6;
+    float: right;
+    position: relative;
+    left: calc(100% - 209px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.auth > a
+{
+    color: white;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    padding: 5px 10px;
+    border-radius: 2px;
+    width: 70px;
+    text-align: center;
+    transition-duration: 0.5s;
+}
+.auth > a:hover
 {
     background-color: white;
     color: black;
-    
 }
-.header > nav
+.auth > hr
 {
-    display: flex;
-    flex-direction: row;
-    width: 500px;
-    align-items: center;
-    height: 100%;
+    height: 50%;
 }
 @media (max-width:850px) {
-    .header > nav
-    {
-        width: 100vh;
-        background-color: black;
-    }
+
 }
+
+
 
