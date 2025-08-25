@@ -19,3 +19,6 @@ def sign_in(request):
 
 def logout(request):
     return HttpResponse("Logged out successfully")
+
+def inventory(request):
+    return render(request,'inventory.html')

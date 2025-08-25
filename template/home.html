@@ -7,14 +7,13 @@
 <div class="products_details_template">
     {% for product in products %}
     <div class="product_card">
-        <img src="media/{{product.product_image}}" alt="" width="150px" height="150px">
+        <img src="media/{{product.product_image}}" width="150px"  class="product_card_items product_image">
         <hr>
-        <p>{{product.product_name}}</p><hr>
-        <p>Price:{{product.product_price}}</p><hr>
-        <p>Seller:{{product.product_seller_id}}</p><hr>
-        <p>Stock:{{product.product_stock}}</p><hr>
-        <button>Details</button><hr>
+        <p class="product_card_items product_name">{{product.product_name}}</p>
+        <hr>
+        <button class="product_card_items product_details_button">{{product.product_price}}$</button>
     </div>
     {% endfor %}
 </div>
+<hr>
 {% endblock body %}

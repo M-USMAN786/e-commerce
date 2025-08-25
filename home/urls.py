@@ -27,6 +27,7 @@ urlpatterns = [
     path("login",views.login,name='login'),
     path("sign_in",views.sign_in,name='sign_in'),
     path("logout",views.logout,name='logout'),
+    path("inventory",views.inventory,name="inventory")
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
