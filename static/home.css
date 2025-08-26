@@ -61,4 +61,7 @@
 .product_price
 {
     font-weight: 500;
+    font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0;
 }

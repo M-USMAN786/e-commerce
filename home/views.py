@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from home.models import Product
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
     products_for_home=Product.objects.all()
@@ -20,5 +22,7 @@ def sign_in(request):
 def logout(request):
     return HttpResponse("Logged out successfully")
 
+@login_required
 def inventory(request):
-    return render(request,'inventory.html')
+    inventory_products=Product.objects.filter(product_seller_id=request.user)
+    return render(request,'inventory.html',{'products': inventory_products})
