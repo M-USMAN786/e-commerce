@@ -5,7 +5,7 @@
 {% endblock head %}
 
 {% block body %}
-<form action="signup" method="post" enctype="multipart/form-data" class="sign_in_form">
+<form action="sign_in" method="POST" enctype="multipart/form-data" class="sign_in_form" enctype="multipart/form-data">
     {% csrf_token %}
     <h1 class="sign_in_text">Sign Up</h1>
     <!-- Profile Picture Upload -->
@@ -15,12 +15,13 @@
     <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
 
     <!-- Text Inputs -->
-    <input type="text" requered class="form_text_items" placeholder="First Name" name="first_name" id="first_name" required>
-    <input type="text" requered class="form_text_items" placeholder="Last Name" name="last_name" id="last_name" required>
-    <input type="text" requered class="form_text_items" placeholder="Username" name="user_name" id="user_name" required>
-    <input type="email" requered class="form_text_items" placeholder="Email" name="email" id="email" required>
-    <input type="password" requered class="form_text_items" placeholder="Password" name="password" id="password" required>
-    <input type="password" requered class="form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
+    <input type="text" class="form_text_items" placeholder="First Name" name="first_name" id="first_name" required>
+    <input type="text" class="form_text_items" placeholder="Last Name" name="last_name" id="last_name" required>
+    <input type="text" class="form_text_items" placeholder="Username" name="user_name" id="user_name" required>
+    <input type="tel" class="form_text_items" placeholder="Phone Number" name="phone_number" id="phone_number" pattern="^(\+92[0-9]{10}|03[0-9]{9})$" required>
+    <input type="email" class="form_text_items" placeholder="Email" name="email" id="email" required>
+    <input type="password" class="form_text_items" placeholder="Password" name="password" id="password" required>
+    <input type="password" class="form_text_items" placeholder="Confirm Password" name="confirm_password" id="confirm_password" required>
     <p>If you already have an account go to Login</p>
 
     <!-- Button -->
