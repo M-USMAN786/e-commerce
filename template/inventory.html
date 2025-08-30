@@ -1,14 +1,17 @@
 {% extends "base.html" %}
-{% block head %}{% endblock head %}
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'inventory.css' %}?v={{ now|date:'U' }}">
+{% endblock head %}
 {% block body %}
 <h1 class="inventory_heading">Your Inventory</h1>
 <div class="products_inventory_template">
     {% for product in products %}
     <div class="product_card">
-        <img src="media/{{product.product_image}}" alt="" class="product_image" width="150px">
-        <H3 class="product_name"></H3>
-        <p class="product_price"></p>
-        <p class="product_stock"></p>
+        <img src="media/{{product.product_image}}" alt="" class="product_image inventory_items" width="150px">
+        <H3 class="product_name inventory_items">{{product.product_name}}</H3>
+        <p class="product_price inventory_items">{{product.product_price}}</p>
+        <p class="product_stock inventory_items">{{product.product_stocks}}</p>
     </div>
     {% endfor %}
 </div>

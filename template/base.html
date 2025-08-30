@@ -26,12 +26,17 @@
             <a href="cart">Cart</a>
             <a href="contact_us">Contact US</a>
         </nav>
+      {% if user.is_authenticated %}
         <div class="auth">
-            <a href="login_form" class="login_form_button">Login</a>
-            <hr>
-            <a href="sign_in_form" class="signin_form_button">Sign in</a>
-        </div>
-    </div>
+            <a href="logout" class="logout_button">Logout</a>
+      {% else %}
+      <div class="auth">
+          <a href="login_form" class="login_form_button">Login</a>
+          <hr>
+          <a href="sign_in_form" class="signin_form_button">Sign in</a>
+      </div>
+      {% endif %}
+  </div>
     {% block body %}{% endblock body %}
     <script>
         function nav_toggle()
