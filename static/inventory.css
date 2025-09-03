@@ -1,0 +1,64 @@
+.products_inventory_template
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-top: 50px;
+    padding-bottom: 100%;
+}
+.product_card
+{
+    width: 200px;
+    height: 300px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    justify-content: space-around;
+}
+.item_delete_button,.item_edit_button_form
+{
+    background-color: black;
+    border: none;
+    outline: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    color: white;
+    position: relative;
+}
+.item_edit_button_form
+{
+    top: -255px;
+    left: 80px;
+    transition-duration: 0.2s;
+}
+.item_delete_button
+{
+    top: -320px;
+    left: 35px;
+}
+.add_product_card_button
+{
+    color: white;
+    font-size: 75px;
+    background-color: black;
+    outline: none;
+    border-style: dashed;
+    border-color: white;
+    border-width: 2px;
+    padding: 100px 70px;
+    border-radius: 10px;
+}
+.product_card:hover > form
+{
+    color: black;
+    background-color: white;
+}

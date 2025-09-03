@@ -12,7 +12,11 @@
         <H3 class="product_name inventory_items">{{product.product_name}}</H3>
         <p class="product_price inventory_items">{{product.product_price}}</p>
         <p class="product_stock inventory_items">{{product.product_stocks}}</p>
+        <form action="edit" method="post" class="item_edit_button_form">{% csrf_token %}<button class="fa-pencil"></button></form>
     </div>
     {% endfor %}
+    <form action="add_product_card" class="product_card" method="post">
+        <button type="submit" class="add_product_card_button">+</button>
+    </form>
 </div>
 {% endblock body %}

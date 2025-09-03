@@ -166,6 +166,7 @@ html, body {
     text-align: center;
     transition-duration: 0.5s;
 }
+
 .auth > a:hover
 {
     background-color: white;
@@ -174,6 +175,18 @@ html, body {
 .auth > hr
 {
     height: 50%;
+}
+.logout_button
+{
+    color: white;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    padding: 5px 10px;
+    border-radius: 2px;
+    width: 70px;
+    text-align: center;
+    transition-duration: 0.5s;
 }
 @media (max-width:850px) {
 

@@ -7,8 +7,8 @@
 <form action="login" method="POST" class="login_form">
     {% csrf_token %}
     <h1 class="login_text">login</h1>
-    <input type="email" class="form_items" required name="email" id="email">
-    <input type="password" class="form_items" required name="password" id="password">
+    <input type="email" class="form_items" placeholder="E-mail" required name="email" id="email">
+    <input type="password" class="form_items" placeholder="Password" required name="password" id="password">
     <p>If you don't have an account then go to Sign In.</p>
     <button type="submit" class="login_button">Login</button>
 </form>

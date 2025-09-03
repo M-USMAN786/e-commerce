@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock head %}
+{% block body %}
+<h1>Enter Following Details</h1>
+<form action="add_new_product" enctype="multipart/form-data" method="post" class="new_product_uploading_template">
+    <input type="file" name="product_image" id="product_image">
+    <input type="text" name="product_name" id="product_name">
+    <input type="number" name="product_price" id="product_price">
+    <input type="number" name="product_stock" id="product_stock">
+    <input type="text" name="product_details" id="product_details">
+    <select name="category" id="category">
+        <option value="Computer Acesories">Computer Acesories</option>
+        <option value="Mobile Acessories">Mobile Acessories</option>
+        <option value="Mobile Phones">Mobile Phones</option>
+        <option value="Stationary">Stationary</option>
+        <option value="Grosary">Grosary</option>
+        <option value="Home Apliances">Home Apliances</option>
+        <option value="Others">Others</option>
+    </select>
+    <button type="submit">Publish</button>
+</form>
+{% endblock body %}

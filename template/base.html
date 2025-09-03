@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% comment %} font end {% endcomment %}
+{% comment %} font_awsome import {% endcomment %}
+<script src="https://kit.fontawesome.com/3e39619364.js" crossorigin="anonymous"></script>
+{% comment %} font_awsome import end {% endcomment %}
     {% load static %}
 <link rel="stylesheet" href="{% static 'base.css' %}?v={{ now|date:'U' }}">
 {% block head %}{% endblock head %}
@@ -27,7 +31,6 @@
             <a href="contact_us">Contact US</a>
         </nav>
       {% if user.is_authenticated %}
-        <div class="auth">
             <a href="logout" class="logout_button">Logout</a>
       {% else %}
       <div class="auth">

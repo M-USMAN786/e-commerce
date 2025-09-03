@@ -172,6 +172,10 @@ html, body {
     background-color: white;
     color: black;
 }
+.auth > hr
+{
+    height: 50%;
+}
 .logout_button
 {
     color: white;
@@ -183,13 +187,18 @@ html, body {
     width: 70px;
     text-align: center;
     transition-duration: 0.5s;
+    float: right;
+    position: relative;
+    left: calc(100% - 129px);
 }
-.auth > hr
-{
-    height: 50%;
-}
-@media (max-width:850px) {
+.logout_button:hover
+    {
+        background-color: white;
+        color: black;
+    }
 
+@media (max-width:850px) {
+    
 }
 
 
