@@ -99,13 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',   # default
-    'yourapp.backends.EmailBackend',              # add this
-]
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -140,3 +133,7 @@ STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesSto
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+]

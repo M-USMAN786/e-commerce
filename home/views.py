@@ -18,17 +18,30 @@ def login_form(request):
     return render(request,'login_form.html')
 
 def login_view(request):
-    if request.method=='POST':
-       email_from_user=request.POST.get('email')
-       passworde=request.POST.get('password')
-       user=authenticate(email=email_from_user, password=passworde)
-       if user is not None:
-          login(request, user)
-          messages.success(request,"Logged in successfully!")
-          return redirect('home')
-       else:
-          messages.error(request,"Invalid credentials, please try again!")
-          return redirect('login_form')
+    if request.method == 'POST':
+        email_from_user = request.POST.get('email').strip()
+        passworde = request.POST.get('password')
+
+        # Step 1: Check if email exists
+        try:
+            user_obj = User.objects.get(email=email_from_user)
+        except User.DoesNotExist:
+            messages.error(request, "Email does not exist.")
+            return redirect('login_form')
+
+        # Step 2: Authenticate using username
+        user = authenticate(request, username=user_obj.username, password=passworde)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Logged in successfully!")
+            return redirect('home')
+        else:
+            messages.error(request, "Wrong password.")
+            return redirect('login_form')
+
+    return render(request, 'accounts/login.html')
+
     
 
 def sign_in(request):
